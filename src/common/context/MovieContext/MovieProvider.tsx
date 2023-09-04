@@ -7,10 +7,11 @@ export const MovieProvider:FC<ProviderType> = ({children}) => {
     const [moviesData, setMovieData] = useState<MovieRecordType>(MovieData);
 
     const setFavoriteMovie = (movieId:string)=>{
-      moviesData[movieId].isFavorite = !moviesData[movieId].isFavorite;
-      setMovieData({...moviesData});
+      const temp={[movieId]: {...moviesData[movieId],isFavorite:!moviesData[movieId].isFavorite}};
+      setMovieData(data=>{
+        return {...data,...temp}
+      });
     };
-
   return (
     <MovieContext.Provider value={{state:moviesData,setFavoriteMovie}}>
        {children}
