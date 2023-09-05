@@ -1,10 +1,10 @@
 import { FC, useContext } from "react";
-import PrimaryButton from "../../../common/components/Button/PrimaryButton";
-import { FavoriteButton } from "../../../common/components/Button/FavoriteButton";
-import { MovieContext } from "../../../common/context/MovieContext/MovieContext";
-import { ScreenContext } from "../../../Screens/context/ScreenContext";
+import { ScreenContext } from "../../Screens/context/ScreenContext";
+import { MovieContext } from "../../common/context";
+import { ComponentFavoriteButton, ComponentPrimaryButton } from "../Button";
 
-export const MovieDetail: FC = () => {
+
+export const ComponentMovieDetail: FC = () => {
   const { selected } = useContext(ScreenContext);
   const { state, setFavoriteMovie } = useContext(MovieContext);
   const { title, description, image, isFavorite } = state[selected];
@@ -24,8 +24,8 @@ export const MovieDetail: FC = () => {
         <h2>{title}</h2>
         <p>{description}</p>
         <div className="flex my-[10px] gap-[10px] items-center">
-          <PrimaryButton text="Watch now" onClick={() => {}} />
-          <FavoriteButton
+          <ComponentPrimaryButton text="Watch now" onClick={() => {}} />
+          <ComponentFavoriteButton
             isFavorite={isFavorite}
             onClick={() => setFavoriteMovie(title)}
           />

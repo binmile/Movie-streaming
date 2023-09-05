@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { NavigationContext } from "../../common/context";
 
-export const DrawerItem: React.FC<DrawerItemType> = ({
+export const ComponentDrawerItem: React.FC<DrawerItemType> = ({
   logo,
   text,
   path,
   isLogo = false,
 }) => {
+  const {visible,setVisibility} = useContext(NavigationContext)
   return (
     <NavLink
       to={path}
+      onClick={()=>setVisibility(!visible)}
       className={`flex gap-[5px] text-white ${
         isLogo ? "text-[22px] font-bold " : "16px font-normal"
       }`}

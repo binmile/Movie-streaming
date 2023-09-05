@@ -1,11 +1,7 @@
 import { FC, useContext } from "react";
-import {
-  Avatar,
-  BellIcon,
-  HamburgerIcon,
-  SearchIcon,
-} from "../../../assets/NavBar";
-import { NavigationContext } from "../../context/NavigationContext/NavigationContext";
+
+import { NavigationContext } from "../../common/context";
+import { HamburgerIcon ,Avatar,BellIcon,SearchIcon} from "../../assets/NavBar";
 
 const NavBar: FC = () => {
   const { setVisibility } = useContext(NavigationContext);

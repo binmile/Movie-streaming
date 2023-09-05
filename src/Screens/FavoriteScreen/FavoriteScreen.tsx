@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { ScreenContextProvider } from "../context/ScreenContextProvider";
-import { MovieContext } from "../../common/context/MovieContext/MovieContext";
-import { ColumnScroll } from "../../common/components/Container/ColumnScroll";
-import { MovieSection } from "../../common/components/MovieSection/MovieSection";
-import { MovieCard } from "../../common/components/Card/MovieCard";
-import { MovieDetail } from "../../common/components/MovieDetail/MovieDetail";
+import { MovieContext } from "../../common/context";
+import { ComponentMovieCard } from "../../components/Card";
+import { ComponentMovieSection } from "../../components/MovieSection/ComponentMovieSection";
+import { ComponentMovieDetail } from "../../components/MovieDetail/ComponentMovieDetail";
+import { ComponentColumnScroll } from "../../components/Container";
 
 export const FavoriteScreen: React.FC = () => {
   const { state } = useContext(MovieContext);
@@ -14,14 +14,14 @@ export const FavoriteScreen: React.FC = () => {
 
   return (
     <ScreenContextProvider defaultSelected={data.length > 0 ? data[0] : ""}>
-      <ColumnScroll>
-        <MovieSection
+      <ComponentColumnScroll>
+        <ComponentMovieSection
           movies={data}
           sectionTitle={"Favorite"}
-          Component={MovieCard}
+          Component={ComponentMovieCard}
         />
-        {data.length > 0 && <MovieDetail />}
-      </ColumnScroll>
+        {data.length > 0 && <ComponentMovieDetail />}
+      </ComponentColumnScroll>
     </ScreenContextProvider>
   );
 };

@@ -1,6 +1,9 @@
 import { FC, useState } from 'react'
-import { MovieContext } from './MovieContext'
 import { MovieData } from '../../../utils/Constants'
+import { createContext } from "react";
+
+
+export const MovieContext = createContext<MovieContextType>({state:{},setFavoriteMovie:()=>{}}) 
 
 export const MovieProvider:FC<ProviderType> = ({children}) => {
 

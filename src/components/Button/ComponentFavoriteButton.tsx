@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const FavoriteButton: FC<FavoriteButtonType> = ({
+export const ComponentFavoriteButton: FC<FavoriteButtonType> = ({
   isFavorite,
   onClick,
 }) => {

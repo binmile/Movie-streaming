@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { MovieContext } from "../../common/context";
-import { MovieBanner } from "./components/MovieBanner";
 import { ScreenContextProvider } from "../context/ScreenContextProvider";
-import { ColumnScroll } from "../../common/components/Container";
-import { MovieSection } from "../../common/components/MovieSection/MovieSection";
-import { MovieCard, WideMovieCard } from "../../common/components/Card";
+import { ComponentColumnScroll } from "../../components/Container";
+import { ComponentMovieSection } from "../../components/MovieSection/ComponentMovieSection";
+import { ComponentMovieCard, ComponentWideMovieCard } from "../../components/Card";
+import { ComponentMovieBanner } from "./components/ComponentMovieBanner";
 
 
 
@@ -15,19 +15,19 @@ export const HomeScreen: React.FC = () => {
   return (
     <ScreenContextProvider defaultSelected="Transformer">
       <div className="flex flex-col overflow-hidden">
-        <MovieBanner />
-        <ColumnScroll>
-          <MovieSection
+        <ComponentMovieBanner />
+        <ComponentColumnScroll>
+          <ComponentMovieSection
             movies={trending}
             sectionTitle="Trending"
-            Component={MovieCard}
+            Component={ComponentMovieCard}
           />
-          <MovieSection
+          <ComponentMovieSection
             movies={random}
             sectionTitle="Continue Watch"
-            Component={WideMovieCard}
+            Component={ComponentWideMovieCard}
           />
-        </ColumnScroll>
+        </ComponentColumnScroll>
       </div>
     </ScreenContextProvider>
   );

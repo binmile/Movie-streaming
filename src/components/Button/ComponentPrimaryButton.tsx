@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const PrimaryButton: FC<ButtonType> = ({ text, onClick }) => {
+const ComponentPrimaryButton: FC<ButtonType> = ({ text, onClick }) => {
   return (
     <a
       onClick={onClick}
@@ -13,4 +13,4 @@ const PrimaryButton: FC<ButtonType> = ({ text, onClick }) => {
   );
 };
 
-export default PrimaryButton;
+export default ComponentPrimaryButton;

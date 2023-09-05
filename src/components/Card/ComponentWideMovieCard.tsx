@@ -1,9 +1,9 @@
 import { FC, useContext } from "react";
-import { MovieContext } from "../../context";
-import { ScreenContext } from "../../../Screens/context/ScreenContext";
-import { FavoriteButton } from "../Button/FavoriteButton";
+import { MovieContext } from "../../common/context";
+import { ScreenContext } from "../../Screens/context/ScreenContext";
+import { ComponentFavoriteButton } from "../Button/ComponentFavoriteButton";
 
-export const WideMovieCard: FC<CardType> = ({ movieId }) => {
+export const ComponentWideMovieCard: FC<CardType> = ({ movieId }) => {
   const { state, setFavoriteMovie } = useContext(MovieContext);
   const { image, description, isFavorite, title } = state[movieId];
   const { setSelected } = useContext(ScreenContext);
@@ -14,7 +14,7 @@ export const WideMovieCard: FC<CardType> = ({ movieId }) => {
     >
       <img src={image} className="object-cover w-[100%]" />
       <div className="flex absolute top-0 right-0 m-2">
-        <FavoriteButton
+        <ComponentFavoriteButton
           isFavorite={isFavorite}
           onClick={() => {
             setFavoriteMovie(movieId);
