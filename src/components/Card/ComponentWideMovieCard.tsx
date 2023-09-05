@@ -1,16 +1,18 @@
-import { FC, useContext } from "react";
-import { MovieContext } from "../../common/context";
-import { ScreenContext } from "../../Screens/context/ScreenContext";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { FC, memo } from "react";
 import { ComponentFavoriteButton } from "../Button/ComponentFavoriteButton";
 
-export const ComponentWideMovieCard: FC<CardType> = ({ movieId }) => {
-  const { state, setFavoriteMovie } = useContext(MovieContext);
-  const { image, description, isFavorite, title } = state[movieId];
-  const { setSelected } = useContext(ScreenContext);
+export const ComponentWideMovieCard: FC<CardType> = memo(({ movieId,movie,setFavoriteMovie,setSelected }) => {
+  const { image, description, isFavorite, title } = movie;
+  const selectMovie: any = (e: MouseEvent) => {
+    e.stopPropagation();
+    setSelected(movieId);
+  };
   return (
     <div
       className="flex w-[250px] h-[150px] md:w-[300px] md:h-[180px] lg:w-[350px]  lg:h-[259px] relative shrink-0 rounded-xl overflow-hidden text-black "
-      onClick={() => setSelected(movieId)}
+      onClick={selectMovie}
     >
       <img src={image} className="object-cover w-[100%]" />
       <div className="flex absolute top-0 right-0 m-2">
@@ -27,4 +29,4 @@ export const ComponentWideMovieCard: FC<CardType> = ({ movieId }) => {
       </div>
     </div>
   );
-};
+},(prev,next)=>prev.movie === next.movie);

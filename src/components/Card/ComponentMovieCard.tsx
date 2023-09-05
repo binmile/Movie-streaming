@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import  { FC, useContext } from "react";
+import  { FC, memo} from "react";
 import { ComponentFavoriteButton } from "../Button/ComponentFavoriteButton";
-import { MovieContext } from "../../common/context";
-import { ScreenContext } from "../../Screens/context/ScreenContext";
 
-export const ComponentMovieCard: FC<CardType> = ({ movieId }) => {
-  const { state, setFavoriteMovie } = useContext(MovieContext);
-  const { image, description, isFavorite, title } = state[movieId];
-  const { setSelected } = useContext(ScreenContext);
+export const ComponentMovieCard: FC<CardType> = memo(({ movieId,movie,setFavoriteMovie,setSelected }) => {
+  const { image, description, isFavorite, title } = movie;
   const selectMovie: any = (e: MouseEvent) => {
     e.stopPropagation();
     setSelected(movieId);
@@ -32,4 +28,4 @@ export const ComponentMovieCard: FC<CardType> = ({ movieId }) => {
       </div>
     </div>
   );
-};
+},(prev,next)=>prev.movie === next.movie);

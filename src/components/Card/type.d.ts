@@ -1,3 +1,6 @@
 type CardType = {
-    movieId: string
+    movieId: string,
+    movie:MovieType,
+    setSelected: (movieId:string) => void,
+    setFavoriteMovie: (movieId:string) => void
 }
