@@ -1,8 +1,11 @@
 import { useContext } from 'react';
-import { ScreenContext } from '../../context/ScreenContext';
-import { MovieContext } from '../../../common/context';
-import { ComponentFavoriteButton, ComponentPrimaryButton } from '../../../components/Button';
+import { ScreenContext } from '../../../context/ScreenContext';
 
+import {
+  ComponentFavoriteButton,
+  ComponentPrimaryButton,
+} from '../../../../components/Button';
+import { MovieContext } from '../../../../common/MovieProvider';
 
 export const ComponentMovieBanner = () => {
   const { selected } = useContext(ScreenContext);

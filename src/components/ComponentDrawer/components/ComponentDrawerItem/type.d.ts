@@ -4,11 +4,3 @@ type DrawerItemType = {
     path : string,
     isLogo? : boolean
 };
-
-type DrawerContextType = {
-    visible: boolean,
-    setVisibility : (value: boolean) => void
-}
-
-
-

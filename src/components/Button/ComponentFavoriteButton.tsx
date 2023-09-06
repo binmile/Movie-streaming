@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 export const ComponentFavoriteButton: FC<FavoriteButtonType> = ({
-  isFavorite,
-  onClick,
+  isFavorite = false,
+  onClick = () => {},
 }) => {
   return (
     <a

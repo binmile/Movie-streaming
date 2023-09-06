@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import RouteManager from './Routes/RouteManager';
-import { MovieProvider, NavigationProvider } from './common/context';
-import { ComponentDrawer } from './components/Drawer/ComponentDrawer';
+import { ComponentDrawer } from './components/ComponentDrawer/ComponentDrawer';
 import ComponentNavBar from './components/NavBar/ComponentNavBar';
-
+import { MovieProvider } from './common/MovieProvider';
+import { NavigationProvider } from './common/NavigationProvider';
 const App: React.FC = () => {
   return (
     <MovieProvider>

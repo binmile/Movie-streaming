@@ -8,7 +8,7 @@ import Home from './Home.svg';
 import Settings from './Settings.svg';
 import Logout from './Logout.svg';
 
-export {
+export default {
   Coffee,
   Favorite,
   Community,

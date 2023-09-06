@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { ScreenContext } from '../../Screens/context/ScreenContext';
-import { MovieContext } from '../../common/context';
 import { ComponentFavoriteButton, ComponentPrimaryButton } from '../Button';
+import { MovieContext } from '../../common/MovieProvider';
 
 
 export const ComponentMovieDetail: FC = () => {

@@ -33,7 +33,7 @@ import WonderWomen from './WonderWomen.jpg';
 import WonderWomen2 from './WonderWomen2.jpg';
 import XMen from './XMen.jpg';
 
-export {
+export default {
   Venom,
   Alone,
   AnimatedSeries,

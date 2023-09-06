@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { NavigationContext } from '../../common/context';
+import { NavigationContext } from '../../../../common/NavigationProvider';
 
 export const ComponentDrawerItem: React.FC<DrawerItemType> = ({
   logo,
@@ -8,11 +8,11 @@ export const ComponentDrawerItem: React.FC<DrawerItemType> = ({
   path,
   isLogo = false,
 }) => {
-  const {visible,setVisibility} = useContext(NavigationContext);
+  const { visible, setVisibility } = useContext(NavigationContext);
   return (
     <NavLink
       to={path}
-      onClick={()=>setVisibility(!visible)}
+      onClick={() => setVisibility(!visible)}
       className={`flex gap-[5px] text-white ${
         isLogo ? 'text-[22px] font-bold ' : '16px font-normal'
       }`}
