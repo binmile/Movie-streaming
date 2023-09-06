@@ -1,17 +1,17 @@
-import { RoutesType } from "./type";
-import { HomeScreen, FavoriteScreen,TrendingScreen } from "../Screens";
+import { RoutesType } from './type';
+import { HomeScreen, FavoriteScreen,TrendingScreen } from '../Screens';
 
 export const RoutesConfig : RoutesType = {
     Home:{
-        path: "/",
+        path: '/',
         Component: HomeScreen
     },
     Favorite : {
-        path: "favorite",
+        path: 'favorite',
         Component: FavoriteScreen
     },
     Trending : {
-        path: "trending",
+        path: 'trending',
         Component: TrendingScreen
     }
-} 
+}; 

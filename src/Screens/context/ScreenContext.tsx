@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 
-export const ScreenContext = createContext<ScreenContextType>({selected:'1',setSelected:()=>{}})
+export const ScreenContext = createContext<ScreenContextType>({selected:'1',setSelected:()=>{}});

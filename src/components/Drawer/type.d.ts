@@ -1,5 +1,5 @@
 type DrawerItemType = {
-    logo : React.JSX,
+    logo : string,
     text : string,
     path : string,
     isLogo? : boolean

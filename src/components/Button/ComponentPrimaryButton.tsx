@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const ComponentPrimaryButton: FC<ButtonType> = ({ text, onClick }) => {
   return (

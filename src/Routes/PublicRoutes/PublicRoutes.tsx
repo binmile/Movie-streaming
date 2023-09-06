@@ -1,6 +1,6 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { RoutesConfig } from "../RouteConfig";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { RoutesConfig } from '../RouteConfig';
 
 const PublicRoutes: React.FC = () => {
   return (

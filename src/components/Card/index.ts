@@ -1,4 +1,4 @@
-import {ComponentMovieCard } from "./ComponentMovieCard";
-import { ComponentWideMovieCard } from "./ComponentWideMovieCard";
+import {ComponentMovieCard } from './ComponentMovieCard';
+import { ComponentWideMovieCard } from './ComponentWideMovieCard';
 
-export {ComponentMovieCard,ComponentWideMovieCard}
+export {ComponentMovieCard,ComponentWideMovieCard};

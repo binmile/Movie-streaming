@@ -1,7 +1,7 @@
-import { FC, useContext } from "react";
-import { ComponentRowScroll } from "../Container/ComponentRowScroll";
-import { ScreenContext } from "../../Screens/context/ScreenContext";
-import { MovieContext } from "../../common/context";
+import { FC, useContext } from 'react';
+import { ComponentRowScroll } from '../Container/ComponentRowScroll';
+import { ScreenContext } from '../../Screens/context/ScreenContext';
+import { MovieContext } from '../../common/context';
 
 export const ComponentMovieSection: FC<MovieSectionType> = ({
   movies,
@@ -15,7 +15,8 @@ export const ComponentMovieSection: FC<MovieSectionType> = ({
       <h2 className="text-[22px]">{sectionTitle}</h2>
       <ComponentRowScroll>
         {movies.map((movie) => (
-            <Component key={movie} movieId={movie} movie={state[movie]} setSelected={setSelected} setFavoriteMovie={setFavoriteMovie} />
+            <Component key={movie} movieId={movie} movie={state[movie]} 
+            setSelected={setSelected} setFavoriteMovie={setFavoriteMovie} />
         ))}
       </ComponentRowScroll>
     </section>

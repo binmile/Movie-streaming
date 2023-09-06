@@ -1,9 +1,9 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import RouteManager from "./Routes/RouteManager";
-import { MovieProvider, NavigationProvider } from "./common/context";
-import { ComponentDrawer } from "./components/Drawer/ComponentDrawer";
-import ComponentNavBar from "./components/NavBar/ComponentNavBar";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import RouteManager from './Routes/RouteManager';
+import { MovieProvider, NavigationProvider } from './common/context';
+import { ComponentDrawer } from './components/Drawer/ComponentDrawer';
+import ComponentNavBar from './components/NavBar/ComponentNavBar';
 
 const App: React.FC = () => {
   return (
