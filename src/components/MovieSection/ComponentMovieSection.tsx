@@ -1,12 +1,13 @@
 import { FC, useContext } from 'react';
 import { ComponentRowScroll } from '../ComponentRowScroll/ComponentRowScroll';
-import { ScreenContext } from '../../Screens/context/ScreenContext';
+import { ScreenContext } from '../../common/ScreenContextProvider';
 import { MovieContext } from '../../common/MovieProvider';
+import { ComponentMovieCard } from '../Card';
 
 export const ComponentMovieSection: FC<MovieSectionType> = ({
-  movies,
-  sectionTitle,
-  Component,
+  movies=[],
+  sectionTitle='',
+  isWide=false,
 }) => {
   const { state, setFavoriteMovie } = useContext(MovieContext);
   const { setSelected } = useContext(ScreenContext);
@@ -15,7 +16,8 @@ export const ComponentMovieSection: FC<MovieSectionType> = ({
       <h2 className="text-[22px]">{sectionTitle}</h2>
       <ComponentRowScroll>
         {movies.map((movie) => (
-          <Component
+          <ComponentMovieCard
+            isWide={isWide}
             key={movie}
             movieId={movie}
             movie={state[movie]}

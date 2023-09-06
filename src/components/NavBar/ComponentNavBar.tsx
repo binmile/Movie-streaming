@@ -6,7 +6,9 @@ import { NavigationContext } from '../../common/NavigationProvider';
 const NavBar: FC = () => {
   const { setVisibility } = useContext(NavigationContext);
   return (
-    <div className="z-10 top-0 w-full grid grid-flow-col grid-rows-1 px-[15px] text-white  p-[20px]  lg:pl-[50px]">
+    <div className="z-10 top-0 w-full grid grid-flow-col
+     grid-rows-1 px-[15px] text-white  
+     p-[20px]  lg:pl-[50px]">
       <img
         src={HamburgerIcon}
         className="w-[30px] h-[30px] md:hidden"

@@ -1,6 +1,8 @@
 type ButtonType = {
-    text: string,
+    text?: string,
     onClick: () =>void
+    isFavorite?: boolean
+    isIconButton?: boolean
 }
 type FavoriteButtonType = {
     isFavorite: boolean,

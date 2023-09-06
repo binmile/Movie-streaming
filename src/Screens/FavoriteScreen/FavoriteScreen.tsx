@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import { ScreenContextProvider } from '../context/ScreenContextProvider';
-import { ComponentMovieCard } from '../../components/Card';
+import { ScreenContextProvider } from '../../common/ScreenContextProvider';
 import { ComponentMovieSection } from '../../components/MovieSection/ComponentMovieSection';
 import { ComponentMovieDetail } from '../../components/MovieDetail/ComponentMovieDetail';
 import { ComponentColumnScroll } from '../../components';
 import { MovieContext } from '../../common/MovieProvider';
-
 
 export const FavoriteScreen: React.FC = () => {
   const { state } = useContext(MovieContext);
@@ -19,7 +17,6 @@ export const FavoriteScreen: React.FC = () => {
         <ComponentMovieSection
           movies={data}
           sectionTitle={'Favorite'}
-          Component={ComponentMovieCard}
         />
         {data.length > 0 && <ComponentMovieDetail />}
       </ComponentColumnScroll>

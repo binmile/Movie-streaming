@@ -1,11 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { ScreenContextProvider } from '../context/ScreenContextProvider';
+import { ScreenContextProvider } from '../../common/ScreenContextProvider';
 
 import { ComponentMovieSection } from '../../components/MovieSection/ComponentMovieSection';
-import {
-  ComponentMovieCard,
-  ComponentWideMovieCard,
-} from '../../components/Card';
 import { ComponentMovieBanner } from './components/ComponentMovieBanner/ComponentMovieBanner';
 import { MovieContext } from '../../common/MovieProvider';
 import { ComponentColumnScroll } from '../../components';
@@ -24,12 +20,12 @@ export const HomeScreen: React.FC = () => {
           <ComponentMovieSection
             movies={trending}
             sectionTitle="Trending"
-            Component={ComponentMovieCard}
+            
           />
           <ComponentMovieSection
             movies={random}
             sectionTitle="Continue Watch"
-            Component={ComponentWideMovieCard}
+            isWide={true}
           />
         </ComponentColumnScroll>
       </div>

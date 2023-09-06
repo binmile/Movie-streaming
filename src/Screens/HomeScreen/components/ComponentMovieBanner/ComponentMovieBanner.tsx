@@ -1,11 +1,10 @@
 import { useContext } from 'react';
-import { ScreenContext } from '../../../context/ScreenContext';
 
-import {
-  ComponentFavoriteButton,
-  ComponentPrimaryButton,
-} from '../../../../components/Button';
+
+
 import { MovieContext } from '../../../../common/MovieProvider';
+import { ScreenContext } from '../../../../common/ScreenContextProvider';
+import { ComponentButton } from '../../../../components/Button/ComponentButton';
 
 export const ComponentMovieBanner = () => {
   const { selected } = useContext(ScreenContext);
@@ -22,8 +21,9 @@ export const ComponentMovieBanner = () => {
         <p className=" text-[12px] lg:text-[14px] ">{description}</p>
 
         <div className="flex my-[10px] gap-[10px] items-center">
-          <ComponentPrimaryButton text="Watch now" onClick={() => {}} />
-          <ComponentFavoriteButton
+          <ComponentButton text="Watch now" onClick={() => {}} />
+          <ComponentButton
+            isIconButton={true}
             isFavorite={isFavorite}
             onClick={() => setFavoriteMovie(title)}
           />

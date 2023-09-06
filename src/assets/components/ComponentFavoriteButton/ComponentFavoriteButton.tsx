@@ -1,21 +1,12 @@
 import { FC } from 'react';
 
-export const ComponentFavoriteButton: FC<FavoriteButtonType> = ({
-  isFavorite = false,
-  onClick = () => {},
-}) => {
+type ComponentFavoriteButtonComponent = {
+    isFavorite: boolean
+}
+
+export const ComponentFavoriteButton:FC<ComponentFavoriteButtonComponent> = ({isFavorite}) => {
   return (
-    <a
-      onClick={onClick}
-      className="cursor-pointer inline-flex w-[35px]  p-[8px] bg-favorite  
-                h-[35px] rounded-md 
-                justify-center items-center 
-                md:w-[50px] md:h-[50px] 
-                md:p-[15px] md:rounded-[14px] 
-                md:gap-[10px] backdrop-blur-[10px]
-                lg:w-[60px] lg:h-[60px] shrink-0"  
-    >
-      <svg
+    <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -38,6 +29,5 @@ export const ComponentFavoriteButton: FC<FavoriteButtonType> = ({
           strokeLinejoin="round"
         />
       </svg>
-    </a>
   );
 };

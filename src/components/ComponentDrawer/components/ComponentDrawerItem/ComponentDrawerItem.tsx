@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { NavigationContext } from '../../../../common/NavigationProvider';
 
 export const ComponentDrawerItem: React.FC<DrawerItemType> = ({
-  logo,
-  text,
-  path,
+  logo='',
+  text='',
+  path='/',
   isLogo = false,
 }) => {
   const { visible, setVisibility } = useContext(NavigationContext);

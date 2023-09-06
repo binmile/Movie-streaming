@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { ScreenContextProvider } from '../context/ScreenContextProvider';
-import { ComponentMovieCard } from '../../components/Card';
+import { ScreenContextProvider } from '../../common/ScreenContextProvider';
 import { ComponentMovieSection } from '../../components/MovieSection/ComponentMovieSection';
 import { ComponentMovieDetail } from '../../components/MovieDetail/ComponentMovieDetail';
 import { MovieContext } from '../../common/MovieProvider';
@@ -17,7 +16,7 @@ export const TrendingScreen: React.FC = () => {
         <ComponentMovieSection
           movies={data}
           sectionTitle={'Trending'}
-          Component={ComponentMovieCard}
+          isWide={true}
         />
         {data.length > 0 && <ComponentMovieDetail />}
       </ComponentColumnScroll>
